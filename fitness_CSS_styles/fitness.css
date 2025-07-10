@@ -35,15 +35,28 @@ nav {
     }
 
 
-.super-header {
+.name-header {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   font-family: 'Bangers', cursive;
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   color: #E67E22;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+
+.super-header {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  color: #EG7E22;
+  text-shadow: 2px 2px 5px #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 
  
