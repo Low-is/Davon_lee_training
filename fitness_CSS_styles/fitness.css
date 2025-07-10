@@ -1,19 +1,20 @@
-* {
-box-sizing: border-box;
+body {
+  box-sizing: border-box;
+  background-color: #6495ED;
 }
 
 Navigation bar: 
 Program/Recipe For Success/ Metabolism Calculator/ Book A Call
 
-main-container {
-  display: flex:
+.main-container {
+  display: flex;
   flex-direction: column;
 }
   
 
 nav {
-  background-color: #111;
-  color: white;
+  background-color: #444444;
+  color: #444444;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-around;
@@ -21,8 +22,8 @@ nav {
   font-family: 'Montserrat', sans-serif;
     }
 
-nav a {
-  color: white;
+ nav a {
+  color: #E67E22;
   text-decoration: none;
   font-size: 1.1rem;
   display: flex;
@@ -38,5 +39,15 @@ nav a {
     }
 
 
+.super-header {
+  display: flex;
+  justify-content: center;
+  font-family: 'Bangers', cursive;
+  font-size: 4.5rem;
+  color: #E67E22;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
  
