@@ -3,10 +3,14 @@ body {
   background-color: #6495ED;
 }
 
+Navigation bar: 
+Program/Recipe For Success/ Metabolism Calculator/ Book A Call
+
 .main-container {
   display: flex;
   flex-direction: column;
 }
+  
 
 nav {
   background-color: #444444;
@@ -34,6 +38,11 @@ nav {
   transform: scale(1.15);
     }
 
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .name-header {
   display: flex;
@@ -57,6 +66,4 @@ nav {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-
-
  
