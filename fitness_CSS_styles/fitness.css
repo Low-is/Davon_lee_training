@@ -3,8 +3,6 @@ body {
   background-color: #6495ED;
 }
 
-Navigation bar: 
-Program/Recipe For Success/ Metabolism Calculator/ Book A Call
 
 .main-container {
   display: flex;
@@ -61,9 +59,55 @@ nav {
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 4rem;
-  color: #000000;
+  color: #000000; 
   text-shadow: 2px 2px 5px #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
- 
+
+.center-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+.content-box {
+  flex: 1 1 300px;  /* Minimum width 300px, grows as space allows */
+  max-width: 30%;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.content-box h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content-box p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.content-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 1024px) {
+  .content-box {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-box {
+    max-width: 100%;
+  }
+}
