@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap">
   <link rel="stylesheet" href="./fitness_CSS_styles/fitness.css">
 </head>
 
@@ -37,21 +38,74 @@
 <h1 class="super-header">Health and Wellness Program</h1>
 
 <div class="center-container">
-  <div class="content-box">
-    <h2>Fast Delivery</h2>
-    <p>We offer same-day delivery for all local orders.</p>
+  <div class="content-box" onclick="toggleOverlay(1)">
+    <h2>Live Healthier, Move Freely, Live Fully</h2>
+    <p>Implement these actions into your health and wellness routine.</p>
+    <p><i class="fas fa-search"></i> View Content</p>
+    <div class="overlay" id="overlay-1">
+      <p>Learn the methods I’ve used with hundreds of clients to build strength, lose weight, and never look back!
+Eating habits that you can take with you for a lifetime to help maintain healthy weight and keep off unwanted fat
+Understand the framework of a well-rounded health and wellness regiment
+Leave the stress of not being where you want to be behind once and for all! </p>
+      <button onclick="event.stopPropagation(); closeOverlay(1)">Close</button>
+    </div>
   </div>
-  <div class="content-box">
-    <h2>24/7 Support</h2>
-    <p>Our team is here to help you anytime, day or night.</p>
+
+  <div class="content-box" onclick="toggleOverlay(2)">
+    <h2>Own you wellness journey!</h2>
+    <p>Understanding your body is key to lasting change.</p>
+    <p><i class="fas fa-search"></i> View Content</p>
+    <div class="overlay" id="overlay-2">
+      <p>Telling someone what to do is easy but helping them understand the why behind it all is another story. While I love working with all my clients, I REALLY enjoy helping people build the confidence and develop the knowledge to become the masters of their own health and wellness.</p>
+      <button onclick="event.stopPropagation(); closeOverlay(2)">Close</button>
+    </div>
   </div>
-  <div class="content-box">
-    <h2>Secure Payments</h2>
-    <p>We use industry-standard encryption for all transactions.</p>
+
+  <div class="content-box" onclick="toggleOverlay(3)">
+    <h2>Document</h2>
+    <p>Free Content: This document gives you oversight as to what a healthy well-rounded person should strive for in their lifelong health and wellness journey. (I need to create this document)</p>
+    <p><i class="fas fa-search"></i> View Content</p>
+    <div class="overlay" id="overlay-3">
+      <p>All transactions are PCI-DSS compliant and encrypted end-to-end.</p>
+      <button onclick="event.stopPropagation(); closeOverlay(3)">Close</button>
+    </div>
   </div>
+</div>
+
+<div class="about-me">
+<div class="about-img">
+<p>(Picture of me)</p>
+</div>
+<div class="about-text-box">
+<p>Bio:  Hi, I’m Davon Randolph I’m a master trainer with 10+ years of training experience, a degree in exercise science and a passion for helping others improve their lives through fitness.</p>
+<p>My fitness journey began in 2016, driven by a simple love for working out. What started as a passion for exercise evolved into a deeply rewarding career. I graduated from the University of Texas at San Antonio in 2018 with a Bachelor’s in Exercise Science, fueling my commitment to helping others achieve their health goals.(Picture of me)</p>
+
+<p>With over a decade of experience, I’ve worked with hundreds of clients, guiding them toward weight loss, improved mobility, and a deeper understanding of their wellness needs. The joy of empowering others to feel, look, and perform better is what keeps me energized—it never gets old.  My PRIMARY focus is delivering personalized, results-driven coaching so that you can live the life you deserve. (Picture of me)</p>
+</div>
 </div>
 
 </div>
 
+
+<script>
+  function toggleOverlay(id) {
+    // Hide all overlays first
+    document.querySelectorAll('.overlay').forEach(el => el.classList.remove('active'));
+
+    // Toggle the clicked overlay
+    const overlay = document.getElementById(`overlay-${id}`);
+    if (!overlay.classList.contains('active')) {
+      overlay.classList.add('active');
+    }
+  }
+
+
+function closeOverlay(id) {
+  const overlay = document.getElementById(`overlay-${id}`);
+  if (overlay) {
+    overlay.classList.remove('active');
+  }
+}
+</script>
 </body>
 </html>
