@@ -67,28 +67,53 @@ nav a:hover img {
 }
 
 
-.name-header {
-  display: flex;
-  justify-content: left;
-  font-family: 'Bangers', cursive;
-  font-size: 2.5rem;
+/* font-family: "Roboto Slab", serif; */
+/*  font-family: 'Bangers', cursive; */
+/* font-family: 'Anton', sans-serif; */
+
+.header-wrapper {
+  position: relative;
+  text-align: center;
+  margin: 3rem 0;
+  height: 12rem; 
+}
+
+
+/* Big background text */
+.background-header {
+  font-family: 'Anton', sans-serif;
+  font-size: 12rem;            
   color: #E67E22;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  opacity: 0.6;                
+  user-select: none;
+  pointer-events: none;
+  margin: 0;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  white-space: nowrap;
+  z-index: 0;
 }
 
 
-.super-header {
-  display: flex;
-  justify-content: center;
+
+/* Foreground smaller text */
+.foreground-header {
   font-family: 'Montserrat', sans-serif;
-  font-size: 4rem;
-  color: #000000; 
-  text-shadow: 2px 2px 5px #ffffff;
-  letter-spacing: 2px;
+  font-size: 3rem;
+  color: #000000;
+  margin: 0;
+  padding-top: 9rem;  
+  position: relative;
+  z-index: 1;
   text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 5px #ffffff;
 }
+
 
 .center-container {
   display: flex;
