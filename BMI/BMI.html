@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMI & BMR Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      color: #E67E22;
+    }
+
+    .calculator {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.2rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 1rem;
+      background-color: #E67E22;
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .result {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>BMI & BMR Calculator</h1>
+
+  <div class="calculator">
+    <h2>What is BMI?</h2>
+    <p><strong>Body Mass Index (BMI)</strong> is a measure of body fat based on weight and height. It’s a quick screening tool for identifying underweight, healthy weight, overweight, or obesity.</p>
+
+    <label for="bmi-weight">Weight (kg):</label>
+    <input type="number" id="bmi-weight" required />
+
+    <label for="bmi-height">Height (cm):</label>
+    <input type="number" id="bmi-height" required />
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div id="bmi-result" class="result"></div>
+  </div>
+
+  <div class="calculator">
+    <h2>What is BMR?</h2>
+    <p><strong>Basal Metabolic Rate (BMR)</strong> is the number of calories your body burns at rest. It helps determine how much energy you need daily based on your body and goals.</p>
+    <p><em>(Mifflin-St Jeor Equation - one of the most accurate BMR formulas)</em></p>
+
+    <label for="bmr-gender">Gender:</label>
+    <select id="bmr-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+
+    <label for="bmr-weight">Weight (kg):</label>
+    <input type="number" id="bmr-weight" required />
+
+    <label for="bmr-height">Height (cm):</label>
+    <input type="number" id="bmr-height" required />
+
+    <label for="bmr-age">Age (years):</label>
+    <input type="number" id="bmr-age" required />
+
+    <button onclick="calculateBMR()">Calculate BMR</button>
+    <div id="bmr-result" class="result"></div>
+  </div>
+
+  <script>
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById("bmi-weight").value);
+      const height = parseFloat(document.getElementById("bmi-height").value) / 100;
+
+      if (weight > 0 && height > 0) {
+        const bmi = weight / (height * height);
+        let category = "";
+
+        if (bmi < 18.5) category = "Underweight";
+        else if (bmi < 24.9) category = "Normal weight";
+        else if (bmi < 29.9) category = "Overweight";
+        else category = "Obese";
+
+        document.getElementById("bmi-result").innerText =
+          `Your BMI is ${bmi.toFixed(1)} (${category})`;
+      } else {
+        document.getElementById("bmi-result").innerText = "Please enter valid weight and height.";
+      }
+    }
+
+    function calculateBMR() {
+      const gender = document.getElementById("bmr-gender").value;
+      const weight = parseFloat(document.getElementById("bmr-weight").value);
+      const height = parseFloat(document.getElementById("bmr-height").value);
+      const age = parseInt(document.getElementById("bmr-age").value);
+
+      if (weight > 0 && height > 0 && age > 0) {
+        let bmr;
+
+        if (gender === "male") {
+          bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        } else {
+          bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        }
+
+        document.getElementById("bmr-result").innerText =
+          `Your BMR is approximately ${bmr.toFixed(2)} kcal/day`;
+      } else {
+        document.getElementById("bmr-result").innerText = "Please fill in all fields correctly.";
+      }
+    }
+  </script>
+</body>
+</html>
